@@ -1,7 +1,6 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Base64 } from 'js-base64' ;
-import { ZoomMtg } from '@zoomus/websdk';
 
 @Injectable({
   providedIn: 'root'
@@ -43,52 +42,6 @@ export class ZoomService {
     return this.http.post<any>(`https://zoom.us/oauth/token?code=${code}&grant_type=authorization_code&redirect_uri=https://webdev-test-1.herokuapp.com/appointment`, cal_data, {headers: this.getZoomHeader()})
   }
 
-  getSignature() {
 
-    this.http.post(this.signatureEndpoint, {
-       meetingNumber: this.meetingNumber,
-       role: this.role
-    }).toPromise().then((data: any) => {
-       if(data.signature) {
-          console.log(data.signature)
-          this.startMeeting(data.signature)
-       } else {
-          console.log(data)
-       }
-    }).catch((error) => {
-       console.log(error)
-    })
- 
- }
-
- startMeeting(signature: any) {
-
-  ZoomMtg.init({
-     leaveUrl: this.leaveUrl,
-     isSupportAV: true,
-     success: (success: any) => {
-        console.log(success)
-
-        ZoomMtg.join({
-           signature: signature,
-           meetingNumber: this.meetingNumber,
-           userName: this.userName,
-           apiKey: this.apiKey,
-           userEmail: this.userEmail,
-           passWord: this.passWord,
-           success: (success: any) => {
-              console.log(success)
-           },
-           error: (error: any) => {
-              console.log(error)
-           }
-        })
-     },
-     error: (error: any) => {
-        console.log(error)
-     }
-  })
-
-}
 
 }

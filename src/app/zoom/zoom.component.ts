@@ -52,7 +52,7 @@ export class ZoomComponent implements OnInit {
   }
 
   meeting() {
-    this.zoomService.getSignature();
+    this.getSignature();
   }
 
   getSignature() {
