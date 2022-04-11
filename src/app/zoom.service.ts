@@ -30,6 +30,6 @@ export class ZoomService {
     cal_data.set('grant_type', 'authorization_code');
     cal_data.set('client_secret', 'O8kbyPdHplJmqZbCSwnWL6rO5HATKU5A');
     //let cal_data = `client_id=${environment.OutlookCalendarCred.client_id}&scope=${environment.OutlookCalendarCred.scope}&code=${code}&redirect_uri=${environment.OutlookCalendarCred.redirect_uri}&grant_type=${environment.OutlookCalendarCred.grant_type}&client_secret=${environment.OutlookCalendarCred.client_secret}`
-    return this.http.post<any>("https://zoom.us/oauth/token", cal_data.toString(), {headers: this.getZoomHeader()})
+    return this.http.post<any>(`https://zoom.us/oauth/token?code=${code}&grant_type=authorization_code&redirect_uri=https://webdev-test-1.herokuapp.com/appointment`, cal_data.toString(), {headers: this.getZoomHeader()})
   }
 }
