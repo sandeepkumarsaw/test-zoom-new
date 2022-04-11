@@ -3,7 +3,7 @@ import { ActivatedRoute } from '@angular/router';
 import { ZoomService } from '../zoom.service';
 import { ZoomMtg } from '@zoomus/websdk';
 import { DOCUMENT } from '@angular/common';
-import ZoomMtgEmbedded from "@zoomus/websdk/embedded";
+// import ZoomMtgEmbedded from "@zoomus/websdk/embedded";
 import { HttpClient } from '@angular/common/http';
 
 // ZoomMtg.preLoadWasm();
