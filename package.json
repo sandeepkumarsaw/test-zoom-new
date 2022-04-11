@@ -25,7 +25,6 @@
     "@angular/platform-browser": "~12.2.0",
     "@angular/platform-browser-dynamic": "~12.2.0",
     "@angular/router": "~12.2.0",
-    "@zoomus/websdk": "^2.3.5",
     "express": "^4.17.3",
     "js-base64": "^3.7.2",
     "path": "^0.12.7",
