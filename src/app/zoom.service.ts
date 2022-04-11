@@ -15,7 +15,7 @@ export class ZoomService {
     return new HttpHeaders({
       'Content-Type': 'application/x-www-form-urlencoded',
       
-      Authorization: `Bearer Bny47qq2TJWmaykCQ5JYkA:O8kbyPdHplJmqZbCSwnWL6rO5HATKU5A`
+      Authorization: `Bearer ${atob("Bny47qq2TJWmaykCQ5JYkA:O8kbyPdHplJmqZbCSwnWL6rO5HATKU5A")}`
     });
   }
 
