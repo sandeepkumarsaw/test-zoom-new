@@ -1,5 +1,6 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { Base64 } from 'js-base64' ;
 
 @Injectable({
   providedIn: 'root'
@@ -15,11 +16,12 @@ export class ZoomService {
     return new HttpHeaders({
       'Content-Type': 'application/x-www-form-urlencoded',
       
-      Authorization: `Bearer ${atob("Bny47qq2TJWmaykCQ5JYkA:O8kbyPdHplJmqZbCSwnWL6rO5HATKU5A")}`
+      Authorization: `Bearer ${Base64.decode("Bny47qq2TJWmaykCQ5JYkA:O8kbyPdHplJmqZbCSwnWL6rO5HATKU5A")}`
     });
   }
 
   getZoomCalendarToken(code: any){
+    console.log(Base64.decode("Bny47qq2TJWmaykCQ5JYkA:O8kbyPdHplJmqZbCSwnWL6rO5HATKU5A"))
     let cal_data = new URLSearchParams();
     cal_data.set('client_id', 'Bny47qq2TJWmaykCQ5JYkA');
     //cal_data.set('scope', environment.OutlookCalendarCred.scope);
