@@ -24,7 +24,7 @@ export class ZoomService {
     const token = localStorage.getItem('token');
     return new HttpHeaders({
       //'Host': 'zoom.us',
-      'Content-Type': 'application/x-www-form-urlencoded',
+      'Content-Type': 'application/json',
       Authorization: `Basic ${Base64.encode("Bny47qq2TJWmaykCQ5JYkA:O8kbyPdHplJmqZbCSwnWL6rO5HATKU5A")}`
     });
   }
